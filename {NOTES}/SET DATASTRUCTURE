@@ -1,0 +1,22 @@
+/*==>  set is a data structure which is used to store the elements in both sorted and
+non sorted order .
+
+==> the declaration of set is look like>>
+set<int>st;
+==>it is same as a vector declaration.
+
+and for unsorted it is 
+unsorted_set<int> st;
+
+==>if you want to insert the element in set 
+st.insert(jo bhi karna hai wo idhar);
+
+other operations ==>
+st.size();
+
+how loop run on set ==>
+for(auto it:st){
+        //auto means we have not to mention the data type of elemenet 
+        // ab ish loop mai ek ek karke sab ekemenet aayaynege set ke it variable mai 
+        // and we do anything with it variable.
+}*/

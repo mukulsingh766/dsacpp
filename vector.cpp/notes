@@ -1,0 +1,4 @@
+//if you want to take the last element froma vector the 
+//vector.back();
+// reverse karna hai to 
+//reverse(vec.begin(),vec.end());
