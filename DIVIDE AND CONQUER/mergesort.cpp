@@ -10,7 +10,7 @@ void conquer(int *arr,int si,int mid,int end){
             vec.push_back(arr[i++]);
         }else{
             vec.push_back(arr[j++]);
-        }}
+        }}                  
             while(i<=mid){
 vec.push_back(arr[i++]);
             }
