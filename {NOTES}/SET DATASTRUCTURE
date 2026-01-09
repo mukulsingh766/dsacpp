@@ -20,3 +20,5 @@ for(auto it:st){
         // ab ish loop mai ek ek karke sab ekemenet aayaynege set ke it variable mai 
         // and we do anything with it variable.
 }*/
+//f (special.find(c) != string::npos)
+    // mila ya nhi pta karne ke liye .
