@@ -80,7 +80,7 @@ int sum(Node*root){
 int diameter(Node*root){
  if(root==NULL){
   return 0;
- }
+ }  
  int currentdia=height(root->left)+height(root->right)+1;
  int left=diameter(root->left);
  int right=diameter(root->right);
@@ -116,15 +116,18 @@ bool result(Node*root,Node*subroot){
         }
         return true;
 }
-      
+void make(Node* root,int val){
+   if(root==NULL){
+    return;
+   }
+   
+
+}      
 
 
 
 int main(){
  vector<int>nodes={1,2,4,-1,-1,5,-1,-1,3,-1,6,-1,-1};
 Node*root=buildtree(nodes);
-vector<int>subnodes={2,4,-1,-1,5,-1,-1};
-// Node*subroot=buildtree(subnodes);
-// cout<<diam2(root).first;
-cout<<diam2(root).first;
+
 }

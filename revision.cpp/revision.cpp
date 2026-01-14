@@ -1,20 +1,45 @@
 #include<iostream>
-#include<vector>
 using namespace std;
 class Node{
-  public:
-  int data;
-  Node*left;
-  Node*right;
-  Node(int data){
-    this->data=data; 
-    left=right=NULL;
-  }
+   public:
+   int data;
+   Node*next;
+   Node(int val){
+    this->data=val;
+    next=NULL;
+   }
 };
-Node* buildtree(vector<int>nodes){
+Node* link(){
+  int data;
+  cin>>data;
+  while(data!=-1){
+    Node*head=NULL;
+    Node*newnode=new Node(data);
+  }
+    if(head==NULL){
+      head=newnode;
+    }
   
+    else{  
+      Node* temp=head;
+      while(temp->next!=NULL){
+        temp=temp->next;
+      }
+      temp->next=newnode;
+    
+    cin>>data;
+  }
+  return head;
+
+}
+void print(Node*head){
+   Node*temp=head;
+   while(temp==NULL){
+    cout<<temp->data;
+    temp=temp->next;
+   }
 }
 int main(){
-  vector<int>nodes={1,2,4,-1,-1,5,-1,-1,3,-1,6,-1,-1};
-
+   Node*root=link();
+   print(root);
 }

@@ -1,4 +1,5 @@
 #include<iostream>
+#include<list>
 using namespace std;
 class Node{
 public:
@@ -49,7 +50,8 @@ Node* insert(Node*head,int data,int n){
     }
         int i=0;
         Node*temp=head;
-            while(i<n-1 && temp !=NULL){
+            while(i<n-1
+                 && temp !=NULL){
                temp=temp->next;
                i++;
             }
@@ -69,6 +71,50 @@ Node* reverse(Node*head){
     head=prev;
     return head;
 }
+Node* msort(Node*head,Node*righthead){
+    Node* i=head;
+     Node*j=righthead;
+     list<int>ll;
+     while(head!=NULL&&righthead!=NULL){
+        if(head->data<=righthead->data){
+            ll.push_back(head->data);
+            head=head->next;
+        }else{
+            ll.push_back(righthead->data);
+            righthead=righthead->next;
+        }
+     }
+     while(i!=NULL){
+          ll.push_back(head->data);
+            head=head->next;
+     }
+     while(j!=NULL){
+         ll.push_back(righthead->data);
+            righthead=righthead->next;
+     }
+     return ll.head;
+
+}
+Node* split(Node*head){
+    Node*slow=head;
+    Node*fast=head;
+    Node*prev=NULL;
+    while(fast!=NULL&&fast->next!=NULL){
+      prev=slow;
+      slow=slow->next;
+      fast=fast->next->next;
+    }
+    return prev;
+}
+Node* merge(Node*head){
+   if(head==NULL|| head->next==NULL){
+    return head;
+   }
+   Node*righthead=split(head);
+     merge(head);
+     merge(righthead);
+     msort(head,righthead);
+}
 int main(){
     //statically
   Node*head=input();
@@ -79,7 +125,6 @@ int main(){
 //   cout<<"data:";
 //   cin>>data;
 // //   insert(head,data, i);
-head=reverse(head);
-   print(head);
+merge(head);
   
 }
